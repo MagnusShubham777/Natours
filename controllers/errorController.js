@@ -10,7 +10,6 @@ const handleCastErrorDB = (err) => {
 
 const handleDuplicateKeyDB = (err) => {
     const value = err.message.match(/(["'])(?:(?=(\\?))\2.)*?\1/)[0];
-    console.log(value);
     return new AppError(`Duplicate key found for ${value},Please try with another name`, 400);
 }
 

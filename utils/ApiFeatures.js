@@ -14,7 +14,7 @@ class APIfeatures {
 
         let Objstr = JSON.stringify(Obj)
         Objstr = Objstr.replace(/\b(gte|gt|lte|lt)\b/g, match => `$${match}`);
-        console.log(Objstr);
+        //console.log(Objstr);
 
         this.query = this.query.find(JSON.parse(Objstr));
         return this;

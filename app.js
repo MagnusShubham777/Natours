@@ -14,6 +14,7 @@ const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
 const xss = require('xss-clean');
 const mongosanitize = require('express-mongo-sanitize');
+const compression = require('compression');
 
 
 //Start express Code
@@ -48,6 +49,8 @@ if (process.env.NODE_ENV === 'development') {
 //body parser,to read req.body
 app.use(express.json({ limit: '10kb' }));
 app.use(cookieparser());
+
+app.use(compression());
 
 //test headers
 app.use((req, res, next) => {
