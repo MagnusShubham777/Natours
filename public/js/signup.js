@@ -21,6 +21,7 @@ export const signup = async (name, email, password, passwordConfirm) => {
         }
 
     } catch (err) {
+        console.log(err);
         showAlert('error', err.response.data.message);
     }
 }
