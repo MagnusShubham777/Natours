@@ -33,7 +33,7 @@ app.use(
                 defaultSrc: ["'self'"],
                 scriptSrc: ["'self'", "https://js.stripe.com"],
                 frameSrc: ["'self'", "https://js.stripe.com"],
-                connectSrc: ["'self'", "ws://127.0.0.1:62004"],
+                connectSrc: ["'self'", "ws://careful-tie-boa.cyclic.cloud:64716"]
             },
         },
     })
