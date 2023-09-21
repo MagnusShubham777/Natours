@@ -6,7 +6,7 @@ import { bookTour } from './stripe'
 //DOM elements
 const loginform = document.querySelector('.login-form');
 const logoutbtn = document.querySelector('.nav__el--logout');
-const signupbtn = document.querySelector('..login-form');
+const signupbtn = document.querySelector('.signup-form ');
 const updateData = document.querySelector('.form-user-data');
 const updatePassword = document.querySelector('.form-user-settings');
 const bookbtn = document.getElementById('book-tour')
