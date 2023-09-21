@@ -12078,6 +12078,7 @@ var signup = function signup(_x, _x2, _x3, _x4) {
           _context.prev = 0;
           _context.next = 3;
           return (0, _axios.default)({
+            method: 'POST',
             url: '/api/v1/users/signup',
             data: {
               name: name,
