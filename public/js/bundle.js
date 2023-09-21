@@ -12344,7 +12344,7 @@ var _stripe = require("./stripe");
 //DOM elements
 var loginform = document.querySelector('.login-form');
 var logoutbtn = document.querySelector('.nav__el--logout');
-var signupbtn = document.querySelector('.signup-form ');
+var signupform = document.querySelector('.signup-form ');
 var updateData = document.querySelector('.form-user-data');
 var updatePassword = document.querySelector('.form-user-settings');
 var bookbtn = document.getElementById('book-tour');
@@ -12357,13 +12357,14 @@ if (loginform) {
   });
 }
 ;
-if (signupbtn) {
-  loginform.addEventListener('submit', function (e) {
+if (signupform) {
+  signupform.addEventListener('submit', function (e) {
     e.preventDefault();
     var email = document.getElementById('email').value;
     var password = document.getElementById('password').value;
     var name = document.getElementById('name').value;
     var passwordConfirm = document.getElementById('passwordconfirm').value;
+    console.log();
     (0, _signup.signup)(name, email, password, passwordConfirm);
   });
 }

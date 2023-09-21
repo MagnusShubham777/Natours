@@ -6,7 +6,7 @@ import { bookTour } from './stripe'
 //DOM elements
 const loginform = document.querySelector('.login-form');
 const logoutbtn = document.querySelector('.nav__el--logout');
-const signupbtn = document.querySelector('.signup-form ');
+const signupform = document.querySelector('.signup-form ');
 const updateData = document.querySelector('.form-user-data');
 const updatePassword = document.querySelector('.form-user-settings');
 const bookbtn = document.getElementById('book-tour')
@@ -22,13 +22,14 @@ if (loginform) {
     })
 };
 
-if (signupbtn) {
-    loginform.addEventListener('submit', e => {
+if (signupform) {
+    signupform.addEventListener('submit', e => {
         e.preventDefault();
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
         const name = document.getElementById('name').value;
         const passwordConfirm = document.getElementById('passwordconfirm').value;
+        console.log()
         signup(name, email, password, passwordConfirm);
 
     })
