@@ -44,7 +44,7 @@ exports.signup = catchAsync(async (req, res, next) => {
         role: req.body.role
     });
     const url = `${req.protocol}://${req.get('host')}/me`;
-    console.log(url);
+    //console.log(url);
     await new Email(newUser, url).sendWelcome();
 
     sendcreatedToken(newUser, 200, res);
@@ -174,7 +174,7 @@ exports.forgetPassword = catchAsync(async (req, res, next) => {
     if (!user) {
         return next(new AppError("There is no user with email address", 404));
     }
-    console.log(user);
+    //console.log(user);
 
     //2)generate a web token
 
@@ -194,7 +194,6 @@ exports.forgetPassword = catchAsync(async (req, res, next) => {
             message: 'token sent to email'
         })
     } catch (err) {
-        console.log(err);
         user.passwordResetToken = undefined,
             user.passwordResetExpire = undefined
         await user.save({ validateBeforeSave: false });
@@ -259,6 +258,7 @@ exports.updatePassword = catchAsync(async (req, res, next) => {
     //4)send the response back
 
     sendcreatedToken(user, 200, res);
+    res.redirect(req.originalUrl.split('?')[1]);
 
 
 });

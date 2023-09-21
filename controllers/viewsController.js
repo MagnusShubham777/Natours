@@ -48,18 +48,24 @@ exports.getAboutme = (req, res) => {
     })
 
 }
+exports.createSignup = (req, res) => {
+    res.status(200).render('signup', {
+        title: 'Sign Up',
+
+    })
+}
 
 exports.getBookings = catchAsyncerror(async (req, res, next) => {
     //get all bookings
 
     const booking = await Booking.find({ user: req.user.id });
-    console.log(booking);
+    //console.log(booking);
 
     //Get all tour bookings
 
     const tourids = booking.map(el => el.tour);
     const tours = await Tour.find({ _id: { $in: tourids } });
-    console.log(tourids);
+    //console.log(tourids);
     res.status(200).render('overview', {
         title: "tours",
         tours

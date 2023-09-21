@@ -49,8 +49,6 @@ exports.createOne = Model => catchAsync(async (req, res, next) => {
 );
 
 exports.getOne = (Model, popOptions) => catchAsync(async (req, res, next) => {
-    console.log(`${process.env.STRIPE_SECRET_KEY}`);
-    console.log('sk_test_51NqvXUSIayE5uQn9bWlIKY4sDyXTSk6UGcZXHNjVMNR1huvx19T9Sj3a2biov4h5UJCB1Fk1jqpmfst68MtbUv5C00Us9dGCfF');
 
     let query = Model.findById(req.params.id);
     if (popOptions) query = query.populate(popOptions);
