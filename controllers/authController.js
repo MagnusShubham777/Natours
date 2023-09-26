@@ -241,6 +241,7 @@ exports.updatePassword = catchAsync(async (req, res, next) => {
     //1)get user from collection
 
     const user = await User.findById(req.user.id).select('+password');
+    //console.log(user);
 
     //2)check if posted password is correct or not
 
@@ -257,8 +258,9 @@ exports.updatePassword = catchAsync(async (req, res, next) => {
 
     //4)send the response back
 
+    //sendcreatedToken(user, 200, res);
+    res.redirect('/');
     sendcreatedToken(user, 200, res);
-    res.redirect(req.originalUrl.split('?')[1]);
 
 
 });

@@ -12365,7 +12365,6 @@ if (signupform) {
     var password = document.getElementById('password').value;
     var name = document.getElementById('name').value;
     var passwordConfirm = document.getElementById('passwordconfirm').value;
-    console.log();
     (0, _signup.signup)(name, email, password, passwordConfirm);
   });
 }
@@ -12430,7 +12429,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64716" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54091" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
