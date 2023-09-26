@@ -14,6 +14,9 @@ export const updateSettings = async (data, type) => {
         if (res.data.status === 'success') {
             //console.log(res);
             showAlert("success", `${type.toUpperCase()} changed successfully`);
+            window.setTimeout(() => {
+                location.assign('/login')
+            }, 1500);
 
         }
 
