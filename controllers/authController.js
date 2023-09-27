@@ -257,10 +257,7 @@ exports.updatePassword = catchAsync(async (req, res, next) => {
     await user.save();
 
     //4)send the response back
-
     sendcreatedToken(user, 200, res);
-    // res.redirect('/');
-    // sendcreatedToken(user, 200, res);
 
 
 });

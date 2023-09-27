@@ -12144,6 +12144,12 @@ var updateSettings = function updateSettings(_x, _x2) {
           if (res.data.status === 'success') {
             //console.log(res);
             (0, _alerts.showAlert)("success", "".concat(type.toUpperCase(), " changed successfully"));
+            if (type === 'password') {
+              res.cookie('jwt', 'loggedout', {
+                expires: new Date(Date.now() + 10 * 1000),
+                httpOnly: true
+              });
+            }
             window.setTimeout(function () {
               location.assign('/login');
             }, 1500);
@@ -12432,7 +12438,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54091" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55186" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
