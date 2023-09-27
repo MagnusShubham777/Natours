@@ -12144,9 +12144,11 @@ var updateSettings = function updateSettings(_x, _x2) {
           if (res.data.status === 'success') {
             //console.log(res);
             (0, _alerts.showAlert)("success", "".concat(type.toUpperCase(), " changed successfully"));
-            window.setTimeout(function () {
-              location.assign('/login');
-            }, 1500);
+            if (type === 'password') {
+              window.setTimeout(function () {
+                location.assign('/login');
+              }, 1500);
+            }
           }
           _context.next = 11;
           break;
