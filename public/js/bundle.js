@@ -12144,12 +12144,6 @@ var updateSettings = function updateSettings(_x, _x2) {
           if (res.data.status === 'success') {
             //console.log(res);
             (0, _alerts.showAlert)("success", "".concat(type.toUpperCase(), " changed successfully"));
-            if (type === 'password') {
-              res.cookie('jwt', 'loggedout', {
-                expires: new Date(Date.now() + 10 * 1000),
-                httpOnly: true
-              });
-            }
             window.setTimeout(function () {
               location.assign('/login');
             }, 1500);

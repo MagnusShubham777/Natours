@@ -14,12 +14,6 @@ export const updateSettings = async (data, type) => {
         if (res.data.status === 'success') {
             //console.log(res);
             showAlert("success", `${type.toUpperCase()} changed successfully`);
-            if (type === 'password') {
-                res.cookie('jwt', 'loggedout', {
-                    expires: new Date(Date.now() + 10 * 1000),
-                    httpOnly: true
-                });
-            }
             window.setTimeout(() => {
                 location.assign('/login')
             }, 1500);
